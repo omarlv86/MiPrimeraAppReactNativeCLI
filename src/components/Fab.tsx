@@ -10,6 +10,7 @@ export const Fab = ({title, onPress, position = 'br'}: Props) => {
     const ios = () => {
         return (
             <TouchableOpacity 
+            onPress={ onPress }
               activeOpacity={ 0.5 }
               style={[
                 styles.fabLocation, 
