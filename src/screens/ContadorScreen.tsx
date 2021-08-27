@@ -11,10 +11,20 @@ export const ContadorScreen = () => {
             </Text>
 
             <TouchableOpacity
+            style={ styles.fabLocationBR }
               onPress={ () => setContador(contador + 1) }
             >
-                <View style={styles.button}>
-                  <Text>Click me!!</Text>
+                <View style={styles.fab}>
+                  <Text style={ styles.fabText}>+1</Text>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={ styles.fabLocationBL}
+              onPress={ () => setContador(contador - 1) }
+            >
+                <View style={styles.fab}>
+                    <Text style={ styles.fabText}>-1</Text>
                 </View>
             </TouchableOpacity>
         </View>
@@ -32,9 +42,27 @@ const styles = StyleSheet.create({
         fontSize:40,
         top: -15
     },
-    button: {
-        backgroundColor:'#a2a2a2',
+    fabLocationBR: {
+        position:'absolute',
+        bottom:25,
+        right:25
+    },
+    fabLocationBL: {
+        position:'absolute',
+        bottom:25,
+        left:25
+    },
+    fab: {
+        backgroundColor: '#5856d6',
+        width: 60,
+        height:60,
         borderRadius: 100,
-        margin: 20
+        justifyContent:'center'
+    },
+    fabText: {
+        color: 'white',
+        fontSize:25,
+        fontWeight:'bold',
+        alignSelf:'center'
     }
 })
